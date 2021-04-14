@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
             other.transform.GetComponent<Rigidbody>().AddForceAtPosition(other.transform.position.normalized, transform.position);
             other.transform.GetComponent<Ragdoll>().ActivateRagdoll();
             other.transform.GetComponent<Ragdoll>().ApplyForce(transform.position * enemyForce);
-            Destroy(other.transform.gameObject, 2);
+            Destroy(other.transform.gameObject, 3);
             Destroy(gameObject);
         }
         else

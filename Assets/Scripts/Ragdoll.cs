@@ -16,6 +16,7 @@ public class Ragdoll : MonoBehaviour
     {
         foreach(Rigidbody rb in rbs)
         {
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             rb.isKinematic = true;
         }
         anim.enabled = true;
