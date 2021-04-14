@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator anim;
     private bool onPosition;
-    public GameSettings gameSettings;
+    [SerializeField]
+    private GameSettings gameSettings;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -21,12 +22,10 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out hit))
-            {
                 agent.SetDestination(hit.point);
-            }
         }
         if (agent.velocity.magnitude > 0)
-           anim.SetBool("isMoving", true);
+            anim.SetBool("isMoving", true);
         else
             anim.SetBool("isMoving", false);
 

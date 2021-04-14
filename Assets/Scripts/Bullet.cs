@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Enemy"))
         {
             other.transform.GetComponent<Rigidbody>().AddForceAtPosition(other.transform.position.normalized, transform.position);
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         else
-            Destroy(gameObject, 3);
+            Destroy(gameObject);
+
     }
 }
